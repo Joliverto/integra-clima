@@ -1,0 +1,29 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #45614f;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    border: 1px solid blue;
+}
+
+div.item-h {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 4px;
+
+    border: 1px solid red;
+    color: #f69832;
+}
