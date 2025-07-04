@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #45614f;
+}
+
+/* Header */
+
+header.container-head {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 20px;
+    background-color: #222e26;
+}
+
+header > div.logo-head {
+    display: flex;
+    justify-content: start;
+}
+
+header > div.logo-head > img {
+    width: 90px;
+}
+
+header > div.menu-head {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header > div > span#burguer {
+    font-size: 40px;
+    color: #f69832;
+}
+
+/* Página inicial */
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 8px;
+}
+    
+.div1 {
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div1 > img {
+    width: 380px;
+    height: 110px;
+}
+
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 5;
+
+    display: flex;
+    justify-content: center;
+}
+
+.div2 > img {
+    width: 120px;
+}
+
+.div3 {
+    grid-row: 4 / span 4;
+    grid-column: 3 / span 4;
+
+    font-family: 'Galdeano';
+    padding: 10px;
+    font-size: 1.2em;
+    color: #f69832;
+}
+
+.div4 {
+    grid-row: 8 / span 1;
+    grid-column: 2 / span 2;
+
+    display: flex;
+    align-items: center;
+    width: 130px;
+
+    font-size: 1.1em;
+    font-family: 'Galdeano';
+    text-align: center;
+    font-weight: bold;
+    background-color: #92290c;
+    color: #f69832;
+    border-radius: 10px;
+}
+
+.div5 {
+    grid-row: 8 / span 1;
+    grid-column: 4 / span 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+
+    font-size: 1.1em;
+    font-family: 'Galdeano';
+    text-align: center;
+    font-weight: bold;
+    background-color: #92290c;
+    color: #f69832;
+    border-radius: 10px;
+}
+        
