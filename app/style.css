@@ -155,15 +155,109 @@ nav.nav {
 
 /* Seção de Objetivos */
 
+.section-obj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    background-image: none;
+    background-color: #222e26;
+    color: white;
+    overflow: hidden;
+
+    padding: 0px;
+}
+
+.section-obj .logo-2 {
+    background-color: #c2dfb9;
+    border-radius: 0px 0px 200px 200px;
+    height: 100%;
+    width: 75%;
+    position: relative;
+    top: -60px;
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.section-obj .logo-2 img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: 20px;
+    
+}
+
+.obj-geral {
+    text-align: center;
+    padding: 12px;
+    margin-top: -50px;
+}
+
+.obj-geral h2, .obj-esp h2 {
+    color: #eafae5;
+    text-align: center;
+}
+
+.obj-geral p {
+    text-align: left;
+    padding: 12px 0px;
+    margin-inline: 10px;
+}
+
+.obj-esp div {
+    display: flex;
+    padding: 15px 0px;
+}
+
+.obj-esp p {
+    padding: 15px 0px;
+}
+
+.p1 {
+    background-color: #409283;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.p2 {
+    background-color: #f6c43f;
+    color: black;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.p3 {
+    background-color: #dd4720;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.data-relogio::before {
+    content: "🕑";
+    font-size: 2em;
+    margin: 5px;
+}
+
+.data-relogio {
+    display: flex;
+    align-items: center;
+}
+
+.section-obj img {
+    height: 80px;
+}
 
 /* Versão Tablet */
 
 @media (min-width: 768px) {
-    /* Menu */
-
-
-
     /* Pagina principal */
 
     section {
@@ -200,6 +294,57 @@ nav.nav {
     .links-principal {
         font-size: 1.7em;
     }
+
+    /* Galeria */
+
+    /* Seção de Objetivos */
+
+    .section-obj {
+        padding-bottom: 20px;
+    }
+
+    .section-obj .logo-2 {
+        border-radius: 0px 0px 300px 300px;
+    }
+
+    .section-obj .logo-2 img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .obj-geral {
+        font-size: 1.5em;
+    }
+
+    .obj-esp h2 {
+        font-size: 2.2em;
+    }
+
+    .obj-esp div {
+        font-size: 2em;
+    }
+
+    .obj-esp p {
+        font-weight: bold;
+    }
+
+    .p1, .p2, .p3 {
+        width: 250px;
+    }
+
+    .data-relogio::before {
+        font-size: 2em;
+    }
+
+    .data-relogio {
+        font-size: 2em;
+    }
+
+    .section-obj img {
+        height: 150px;
+        margin: 20px auto;
+    }
+
 }
 
 /* Versão Desktop */
@@ -282,5 +427,30 @@ nav.nav {
 
     .links-principal a {
         margin-right: 40px;
+    }
+
+    /* Seção de Objetivos */
+
+    .section-obj .logo-2 {
+        border-radius: 0px 0px 400px 400px;
+        width: 700px;
+    }
+
+    .section-obj .logo-2 img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .obj-geral {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .obj-geral p {
+        width: 800px;
+    }
+    .section-obj img {
+        height: 100px;
     }
 }
