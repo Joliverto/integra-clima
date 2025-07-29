@@ -56,6 +56,8 @@ nav.nav {
     clip-path: circle(100px at 90% -30%);
     transition: 0.5s ease-out;
 
+    overflow-x: hidden;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -153,6 +155,118 @@ nav.nav {
 
 /* Galeria */
 
+.sec-galeria {
+    margin: 0;
+    padding: 20px;
+    display: block;
+    margin-bottom: 35px;
+}
+
+.sec-galeria h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    color: #f69832;
+    text-shadow: black 2px 2px 2px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    justify-items: center;
+}
+
+.item-galeria {
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3 ease;
+}
+
+.item-galeria:hover img {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* overflow: auto; */
+    background-color: rgba(0,0,0,0.9);
+
+    align-items: center;
+    align-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px; /* Ajusta a posição vertical */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none; /* Impede a seleção do texto */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
 /* Seção de Objetivos */
 
 .section-obj {
@@ -165,7 +279,7 @@ nav.nav {
     color: white;
     overflow: hidden;
 
-    padding: 0px;
+    padding-bottom: 20px;
 }
 
 .section-obj .logo-2 {
@@ -186,7 +300,6 @@ nav.nav {
     width: 200px;
     height: 200px;
     top: 20px;
-    
 }
 
 .obj-geral {
@@ -201,7 +314,7 @@ nav.nav {
 }
 
 .obj-geral p {
-    text-align: left;
+    text-align: justify;
     padding: 12px 0px;
     margin-inline: 10px;
 }
@@ -255,6 +368,309 @@ nav.nav {
     height: 80px;
 }
 
+/* Seção Fluxograma */
+
+.fluxograma {
+    background-color: white;
+}
+
+.fluxograma-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.fluxograma-div img {
+    max-width: 95%;
+}
+
+/* Seção mapa */
+
+.mapa {
+    background-color: #92290c;
+    padding: 15px 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.mapa-div {
+    width: 95%;
+    background-color: white;
+    border-radius: 20px;
+
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mapa-div h1 {
+    color: #92290c;
+    text-align: center;
+    font-size: 1em;
+}
+
+.mapa-div img {
+    max-width: 100%;
+}   
+
+/* Seção de Equipe */
+
+.div-equipe {
+    background-color: #f6c43f;
+    padding: 20px 15px;
+}
+
+.div-equipe h1 {
+    color: #92290c;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: rgba(0, 0, 0, 0.37) 1px 1px 1px;
+}
+
+.grid-equipe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+.perfil-eqp img {
+    width: 100px;
+}
+
+.perfil-eqp p {
+    text-align: center;
+    background-color: #92290c;
+    color: white;
+    padding: 4px;
+
+    font-size: 0.7em;
+}
+
+.div-numeros-eqp {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-eqp {
+    margin: 20px auto;
+}
+
+.logo-eqp img {
+    width: 170px;
+}
+
+.qtd-epq {
+    display: grid;
+    gap: 10px;
+    margin: 10px auto;
+}
+
+.qtd-epq p, h3 {
+    color: #44604d;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.qtd-epq h3 {
+    font-size: 4em;
+    text-shadow: rgba(0, 0, 0, 0.459) 1px 1px 1px;
+}
+
+.grupo-pessoas {
+    display: flex;
+    justify-content: center;
+}
+
+.grupo-pessoas img {
+    width: 250px;
+}
+
+/* Seção de Produtos de Educomunicação */
+
+.produtos-div {
+    background-color: #92290c;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.produtos-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos-titulo img {
+    width: 100px;
+}
+
+.produtos-titulo h2 {
+    color: #7d2927;
+    background-color: #f6c43f;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.2em;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    
+    padding: 10px 20px;
+    padding-bottom: 30px;
+}
+
+.produto {
+    justify-items: center;
+}
+
+#planeta-icone {
+    display: none;
+}
+
+.produto-icon {
+    display: block;
+    min-height: 80px;
+    min-width: 80px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.produto-icon:hover {
+    transform: scale(1.1);
+}
+
+.produto p {
+    color: #f7ad38;
+}
+
+.produtos-final {
+    display: flex;
+    justify-content: center;
+
+}
+
+.produtos-final h2 {
+    color: #7d2927;
+    background-color: #f6c43f;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.2em;
+
+    position: absolute;
+    align-content: flex-start;
+}
+
+.produtos-final img {
+    display: inline-block;
+    width: 80px;
+
+    position: relative;
+    left: 135px;
+    bottom: 10px;
+}
+
+/* Rodapé */
+
+.site-footer {
+    background-color: #f6c43f;
+    color: #222e26;
+    font-size: 16px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #45614f;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-placeholder img {
+    width: 150px;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-center p {
+    margin-bottom: 20px;
+}
+
+.footer-center i {
+    margin-right: 8px;
+    font-size: 28px;
+}
+
+.footer-contato {
+    text-align: center;
+}
+
+.footer-contato h3 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.footer-contato p {
+    margin: 20px 0;
+    word-break: break-all;
+    
+    display: flex;
+    align-items: center;
+}
+
+.footer-contato i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.footer-contact .fa-envelope {
+    margin-right: 8px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: #3c5946;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
 /* Versão Tablet */
 
 @media (min-width: 768px) {
@@ -296,6 +712,11 @@ nav.nav {
     }
 
     /* Galeria */
+
+    .sec-galeria h2 {
+        font-size: 3em;
+        
+    }
 
     /* Seção de Objetivos */
 
@@ -344,6 +765,82 @@ nav.nav {
         height: 150px;
         margin: 20px auto;
     }
+
+    /* Seção de Mapa rede e parcerias */
+
+    .mapa-div h1 {
+        font-size: 2em;
+    }
+
+    /* Seção de Equipe */
+
+    .div-equipe {
+        width: 100%;
+    }
+
+    .div-equipe h1 {
+        font-size: 3.5em;
+        padding: 20px 0;
+    }
+
+    .grid-equipe {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 0;
+    }
+
+    .perfil-eqp img {
+        width: 160px;
+    }
+
+    .perfil-eqp p {
+        font-size: 1.3em;
+    }
+
+    .logo-eqp img {
+        width: 300px;
+    }
+
+    .qtd-epq {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .qtd-items h3 {
+        font-size: 7em;
+    }
+
+    .qtd-items p {
+        font-size: 2em;
+    }
+
+    /* Seção Produtos de Educomunicação */
+
+    .produtos-titulo h2 {
+        font-size: 2em;
+    }
+
+    .produtos-titulo img {
+        width: 160px;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 60px;
+    }
+
+    .produtos-final h2 {
+        font-size: 2em;
+    }
+
+    .produtos-final img {
+        width: 120px;
+        left: 220px;
+        bottom: 20px;
+    }
+
+    /* Rodapé */
+
 
 }
 
@@ -452,5 +949,123 @@ nav.nav {
     }
     .section-obj img {
         height: 100px;
+    }
+
+    /* Seção de Mapa rede e parcerias */
+
+    .mapa {
+        padding: 40px 0;
+    }
+
+    .mapa-div {
+        width: 70%;
+        padding-bottom: 0px;
+    }
+
+    .mapa-div h1 {
+        font-size: 2.5em;
+        margin-top: 30px;
+    }
+
+    /* Seção de Equipe */
+
+    .section-equipe {
+        background-color: #f6c43f;
+    }
+
+    .div-equipe {
+        display: grid;
+        grid-template-rows: 10%fr 80%fr 10%fr;
+        grid-template-columns: 70% 30%;
+        width: 95%;
+        padding-bottom: 60px;
+    }
+
+    .div-equipe h1 {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 2;
+        padding-bottom: 40px;
+    }
+
+    .div-numeros-eqp {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .qtd-epq {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .qtd-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .qtd-items p, h3 {
+        width: 160px;
+    }
+
+    .grupo-pessoas {
+        display: flex;
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 2;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .grupo-pessoas img {
+        width: 500px;
+    }
+
+    /* Seção Produtos de Educomunicação */
+
+    .produtos-titulo h2 {
+        font-size: 2em;
+    }
+
+    .produtos-titulo img {
+        width: 160px;
+    }
+
+    .produtos-grid {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(8, 1fr);
+        padding-bottom: 60px;
+    }
+
+    #planeta-icone {
+        display: block;
+        grid-row: 1 / span 2;
+        grid-column: 8 / span 1;
+    }
+
+    #planeta-icone img {
+        width: 350px;
+        transform: scaleX(-1);
+    }
+
+    .produtos-final h2 {
+        font-size: 2em;
+    }
+
+    .produtos-final img {
+        width: 120px;
+        left: 220px;
+        bottom: 20px;
+    }
+
+    /* Rodapé */
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-around
+    }
+
+    .footer-logo img {
+        width: 200px;
     }
 }

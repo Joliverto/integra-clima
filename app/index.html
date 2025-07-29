@@ -6,7 +6,8 @@
     <title>Projeto Integraclima</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="container">
@@ -16,25 +17,25 @@
             </a>
             <span id="burguer" class="material-symbols-outlined">menu</span>
             <ul class="nav-list">
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Organizações</a></li>
-                <li><a href="#">Redes</a></li>
-                <li><a href="#">Equipe</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#organizacoes">Organizações</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="inicial">
+        <section class="inicial" id="inicial">
             
             <div class="parent">
                 <div class="div1">
-                    <img src="../midias/texto-long2.png" alt="">
+                    <img src="../midias/texto-long.png" alt="Mudança Saúde Climática Única biodiversidade">
                 </div>
 
                 <div class="div2">
-                    <img src="../midias/foguete2.png" alt="">
+                    <img src="../midias/canoa.png" alt="Imagem canoa na água">
                 </div>
 
                 <div class="div3">
@@ -49,11 +50,67 @@
     
         </section>
 
-        <section class="galeria">
-            <h1>Oi</h1>
+        <section class="sec-galeria" id="section-galeria">
+
+            <h2>Galeria de Fotos</h2>
+            <div class="galeria">
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto1.webp" alt="Imagem 1">                                       
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto2.jpg" alt="Imagem 2">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto3.jpg" alt="Imagem 3">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto4.webp" alt="Imagem 4">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto5.jpg" alt="Imagem 5">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto6.jpg" alt="Imagem 6">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto7.jpg" alt="Imagem 7">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto8.jpg" alt="Imagem 8">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto9.jpg" alt="Imagem 9">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto10.webp" alt="Imagem 10">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto11.webp" alt="Imagem 11">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto13.webp" alt="Imagem 13">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto14.webp" alt="Imagem 14">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto15.webp" alt="Imagem 15">
+                </div>
+                <div class="item-galeria">
+                    <img src="../midias/fotos/foto16.webp" alt="Imagem 16">
+                </div>
+            </div>
+
+            <div id="modal" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="modal-img">
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+            </div>
+
         </section>
 
-        <section class="section-obj">
+        <section class="section-obj" id="sobre">
             <div  class="logo-2">
                 <img src="../midias/logo2.png" alt="IntegraClima logo 2">
             </div>
@@ -73,15 +130,236 @@
             </div>
 
             <div class="data-relogio">
-                <!-- <img src="#" alt="ícone relógio"> -->
                 <p>Janeiro de 2024 a Maio de 2025</p>
             </div>
 
-            <img src="../midias/grupo3.png" alt="Grupo de pessoas">
+            <img src="../midias/grupo-pessoas.png" alt="Grupo de pessoas">
         </section>
+
+        <section class="fluxograma" id="organizacoes">
+            <div class="fluxograma-div">
+                <img src="../midias/fluxograma.webp" alt="Fluxograma">
+            </div>
+        </section>
+
+        <section class="mapa" id="redes">
+            <div class="mapa-div">
+                <h1>Organizações e rede de parcerias</h1>
+                <img src="../midias/mapa.webp" alt="">
+            </div>
+        </section>
+
+        <section class="section-equipe" id="equipe">
+            <div class="div-equipe">
+                <h1>Nossa Equipe</h1>
+                <div class="grid-equipe">
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/aldemir-perfil.webp">
+                        <p>Aldemir Branco</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/indira-perfil.webp" alt="Foto de Perfil">
+                        <p>Indira Eyzaguirre</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/sem-perfil.webp" alt="Foto de Perfil">
+                        <p>Allan Yu Iwama</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/diego-perfil.webp" alt="Foto de Perfil">
+                        <p>Diego Simeone</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/giselle-perfil.webp" alt="Foto de Perfil">
+                        <p>Giselle Silva</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/yago-perfil.webp" alt="Foto de Perfil">
+                        <p>Yago Martins</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/joao-perfil.webp" alt="Foto de Perfil">
+                        <p>João Neto</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/wendel-perfil.webp" alt="Foto de Perfil">
+                        <p>Wendell Nascimento</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/andrea-perfil.webp" alt="Foto de Perfil">
+                        <p>Andrea Laranjeira</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/marcio-perfil.webp" alt="Foto de Perfil">
+                        <p>Marcio Cavalcante</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/livia-perfil.webp" alt="Foto de Perfil">
+                        <p>Lívia Furtado</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/wellem-perfil.webp" alt="Foto de Perfil">
+                        <p>Wellem Nascimento</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/sem-perfil.webp" alt="Foto de Perfil">
+                        <p>Jocilena</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/keyse-perfil.webp" alt="Foto de Perfil">
+                        <p>Keyse Silva</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/gabriela-perfil.webp" alt="Foto de Perfil">
+                        <p>Gabriela Sales</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/deisiane-perfil.webp" alt="Foto de Perfil">
+                        <p>Deisiane Aviz</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/karem-perfil.webp" alt="Foto de Perfil">
+                        <p>Karem Mantena</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/victoria-perfil.webp" alt="Foto de Perfil">
+                        <p>Victória Lima</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/luciana-perfil.webp" alt="Foto de Perfil">
+                        <p>Luciana Gavinho</p>
+                    </div>
+                    <div class="perfil-eqp">
+                        <img src="../midias/fotos/perfil/jamilly-perfil.webp" alt="Foto de Perfil">
+                        <p>Jamilly Pereira</p>
+                    </div>
+                </div>
+
+                <div class="div-numeros-eqp">
+                    <div class="logo-eqp">
+                        <img src="../midias/logo-equipe.webp" alt="Logo IntegraClima">
+                    </div>
+                    <div class="qtd-epq">
+                        <div class="qtd-items">
+                            <h3>00</h3>
+                            <p>Graduandos</p>
+                        </div>
+                        <div class="qtd-items">
+                            <h3>01</h3>
+                            <p>Comunidades</p>
+                        </div>
+                        <div class="qtd-items">
+                            <h3>02</h3>
+                            <p>ACSs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grupo-pessoas">
+                    <img src="../midias/grupo-pessoas-2.png" alt="Grupo de pessoas">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-produtos">
+            <div class="produtos-div">
+                <div class="produtos-titulo">
+                    <img src="../midias/coracao.png" alt="ícone de Coração"><h2>Produtos de Educomunicação</h2>
+                </div>
+                <div class="produtos-grid">
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Jogos didáticos</p>
+                    </div>
+                    <div class="produto">
+                        <div class="produto-icon"></div>
+                        <p>Historinhas</p>
+                    </div>
+                    <div class="produto" id="planeta-icone">
+                        <img src="../midias/planeta.png" alt="Planeta Icone">
+                    </div>
+                </div>
+                <div class="produtos-final">
+                    <h2>Portal de Dados do IntegraClima</h2>
+                    <img src="../midias/termometro.png" alt="Termômetro">
+                </div>
+            </div>
+        </section>
+
     </main>
-    <footer>
-        
+
+    <footer class="site-footer" id="contato">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-placeholder">
+                    <img src="../midias/logo2.png" alt="Logo integraclima">
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <p><i class="fa-solid fa-location-dot"></i> Bragança, Pará, Brasil</p>
+                <p class="dev-text"> Desenvolvido por <b> João de Oliveira Neto</b></p>
+                <p class="copyright-text"><b>IntegraClima</b>, todos os direitos reservados.</p>
+            </div>
+
+            <div class="footer-contato">
+                <h3>Contato</h3>
+                <p><i class="fa-solid fa-envelope"></i> integraclimasaude@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@IntegraClima/videos" aria-label="Link para o Youtube" target="_blank" rel="external"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/integra.clima/" aria-label="Link para o Instagram" target="_blank" rel="external"><i class="fa-brands fa-instagram"></i></a>
+                    <span>@integra.clima</span>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
 </body>
