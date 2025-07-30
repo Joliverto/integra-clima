@@ -1,8 +1,22 @@
 // Menu Hamburguer
 const hamburguer = document.querySelector('#burguer');
 const nav = document.querySelector(".nav");
+const menuLinks = document.querySelectorAll('.menu-link')
+const body = document.body
 
-hamburguer.addEventListener("click", () => nav.classList.toggle("active"));
+hamburguer.addEventListener("click", () => {
+    nav.classList.toggle("active")
+    body.classList.toggle("no-rolagem")
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (nav.classList.contains('active')) {
+            nav.classList.toggle('active')
+            body.classList.toggle('no-rolagem')
+        }
+    })
+})
 
 // Galeria de Fotos
 

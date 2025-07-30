@@ -24,6 +24,10 @@ main > section > h1 {
 
 /* Menu / Cabeçalho */
 
+.no-rolagem {
+    overflow: hidden;
+}
+
 header.container {
     background-color: #222e26;
     padding-inline: 16px;
