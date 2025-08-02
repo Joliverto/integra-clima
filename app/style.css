@@ -868,6 +868,15 @@ nav.nav {
 @media (min-width: 1024px) {
     /* Menu */
 
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
     .nav-list {
         all: initial;
         display: flex;
@@ -876,6 +885,8 @@ nav.nav {
         list-style: none;
         gap: 50px;
         font-family: 'Galdeano';
+
+        
     }
 
     .nav-list a {
@@ -895,7 +906,7 @@ nav.nav {
     /* Página Principal */
 
     .parent {
-        grid-template-rows: 3fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 2fr;
         max-width: 1400px;
     }
