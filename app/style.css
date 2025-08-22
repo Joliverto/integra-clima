@@ -43,6 +43,7 @@ nav.nav {
     align-items: center;
 
     padding-inline: 16px;
+    
 }
 
 .logo-head > img {
@@ -573,6 +574,7 @@ nav.nav {
 
 .produto p {
     color: #f7ad38;
+    text-align: center;
 }
 
 .produtos-final {
@@ -619,6 +621,7 @@ nav.nav {
     flex-wrap: wrap;
     gap: 20px;
     color: #45614f;
+    padding-inline: 10px;
 }
 
 .footer-logo {
@@ -1036,7 +1039,7 @@ nav.nav {
     }
 
     .qtd-items p, h3 {
-        width: 160px;
+        width: 190px;
     }
 
     .grupo-pessoas {
