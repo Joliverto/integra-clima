@@ -458,6 +458,10 @@ nav.nav {
     padding: 20px 0;
 }
 
+.grid-equipe a {
+    text-decoration: none;
+}
+
 .perfil-eqp img {
     width: 100px;
 }
