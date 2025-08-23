@@ -551,6 +551,24 @@ nav.nav {
     justify-items: center;
 }
 
+.produto a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.produto span {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px 2px black;
+}
+
+.produto:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
 #planeta-icone {
     display: none;
 }
@@ -559,17 +577,13 @@ nav.nav {
     display: block;
     min-height: 80px;
     min-width: 80px;
-    background-color: white;
     margin: 10px;
     border-radius: 50%;
-
-    cursor: pointer;
-
-    transition: 0.3s;
 }
 
-.produto-icon:hover {
-    transform: scale(1.1);
+.produto-icon img {
+    min-width: 80px;
+    max-width: 80px;
 }
 
 .produto p {
