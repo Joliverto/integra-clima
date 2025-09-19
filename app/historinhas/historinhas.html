@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Historinhas</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+    /* ====== Variáveis e reset básico ====== */
+    :root {
+      --bg:#f8fafc;
+      --text:#111827;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --brand:#0ea5e9;
+      --radius:12px;
+      --container:1200px;
+      --gap:16px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html, body {
+      margin:0
+    }
+
+    body {
+      font-family: 'Galdeano';
+      background-color: white;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%; 
+      display: block
+    }
+
+    /* ====== Layout ====== */
+    .container {
+      max-width:var(--container);margin-inline:auto;padding:24px
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid black;
+      
+      position: sticky;
+      top: 0;
+    }
+    .btn-back {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: .5rem .8rem;
+      cursor: pointer;
+    }
+    .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .intro {
+      color: var(--muted);
+      margin: 16px 0
+    }
+
+    /* ====== Grid ====== */
+    .grid{list-style:none;padding:0;margin:20px 0;display:grid;grid-template-columns:1fr;gap:var(--gap)}
+    @media (min-width:768px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (min-width:1024px){ .grid{grid-template-columns:repeat(4,1fr)} }
+
+    /* ====== Card ====== */
+.card {
+   background-color: white;
+   box-sizing: border-box;
+   border-radius: var(--radius);
+   overflow: hidden;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.432);
+}
+
+.card__link {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   text-decoration: none;
+   color: inherit;
+}
+
+.card__media {
+   aspect-ratio: 16/10;
+   background: #e2e8f0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.card__media img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.card__badge {
+   position: absolute;
+   inset: auto auto 8px 8px;
+   background: #000;
+   color: #fff;
+   padding: .25rem .5rem;
+   border-radius: 999px;
+   font-size: .75rem;
+}
+
+.card__body {
+   padding: 12px;
+}
+
+.card__title {
+   font-size: 1rem;
+   font-weight: 700;
+   margin: 0 0 6px;
+}
+
+.card__meta {
+   font-size: .9rem;
+   color: var(--muted);
+   margin: 0 0 10px;
+}
+
+.card__cta {
+   margin-top: auto;
+   align-self: flex-start;
+   background: var(--brand);
+   color: white;
+   border: none;
+   border-radius: 8px;
+   padding: .5rem .65rem;
+   font-weight: 600;
+}
+
+.card__link:hover .card__title {
+   text-decoration: underline;
+}
+
+    footer{margin:24px 0;color:var(--muted);font-size:.9rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <header class="container" style="position:relative">
+    <button class="btn-back" type="button" onclick="history.back()" aria-label="Voltar">Voltar</button>
+    <h1 class="title">Historinhas</h1>
+  </header>
+
+  <main class="container">
+    <p class="intro">Clique numa historinha para abrir a página oficial da Editora.</p>
+
+    <ul class="grid" role="list">
+      <!-- Card 1 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/nas-aguas-do-igarape-entre-conchas-risos-e-apuros/" target="_blank" rel="noopener noreferrer" aria-label="Nas águas do igarapé: entre conchas, risos e apuros">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/aguas-do-igarape.webp" alt="Capa de Nas águas do igarapé (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Igarapé</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Nas águas do igarapé: entre conchas, risos e apuros</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 2 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/clima-e-maretorio-uma-historia-que-vem-da-mare/" target="_blank" rel="noopener noreferrer" aria-label="Clima e maretório: uma história que vem da maré">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/clima-e-maretorio.webp" alt="Capa de Clima e maretório (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Maré</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Clima e maretório: uma história que vem da maré</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 3 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/a-fabula-do-boi-e-a-danca-que-espalhou-o-medo/" target="_blank" rel="noopener noreferrer" aria-label="A fábula do boi e a doença que espalhou o medo">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/fabula-boi-doenca.webp" alt="Capa de A fábula do boi (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Fábula</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">A fábula do boi e a doença que espalhou o medo</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 4 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/as-aventuras-de-deny-zilda-e-chico-agulha/" target="_blank" rel="noopener noreferrer" aria-label="As aventuras de Deny, Zilda e Chico Agulha">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/aventuras-deny-e-chico.webp" alt="Capa de As aventuras de Deny, Zilda e Chico Agulha (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Aventuras</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">As aventuras de Deny, Zilda e Chico Agulha</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 5 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/na-floresta-de-acai/" target="_blank" rel="noopener noreferrer" aria-label="Na floresta de açaí">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/floresta-de-açai.webp" alt="Capa de Na floresta de açaí (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Açaí</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Na floresta de açaí</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 6 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/joaozinho-curioso-e-as-aguas-de-enchentes/" target="_blank" rel="noopener noreferrer" aria-label="Joãozinho curioso e as águas de enchente">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/joaozinho-curioso.webp" alt="Capa de Joãozinho curioso e as águas de enchente (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Enchente</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Joãozinho curioso e as águas de enchente</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 7 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/lucas-e-o-inimigo-invisivel/" target="_blank" rel="noopener noreferrer" aria-label="Lucas e o Inimigo Invisível">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/lucas-inimigo-invi.webp" alt="Capa de Lucas e o Inimigo Invisível (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Saúde</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Lucas e o Inimigo Invisível</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+
+      <!-- Card 8 -->
+      <li class="card">
+        <a class="card__link" href="https://editoraitacaiunas.com.br/produto/seu-corpo-seu-instrumento-prevencao-de-doencas-osteomusculares-em-pescadores/" target="_blank" rel="noopener noreferrer" aria-label="Seu corpo, seu instrumento: prevenção de doenças osteomusculares em pescadores">
+          <div class="card__media" style="position:relative">
+            <img src="../historinhas/capas/prevencao-de-doencas.webp" alt="Capa de Seu corpo, seu instrumento (placeholder)" onerror="this.remove()">
+            <!-- <span class="card__badge">Prevenção</span> -->
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Seu corpo, seu instrumento: prevenção de doenças osteomusculares em pescadores</h3>
+            <p class="card__meta">editoraitacaiunas.com.br</p>
+            <span class="card__cta" aria-hidden="true">Abrir ↗</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> — Historinhas
+  </footer>
+
+  <script>
+    // Atualiza o ano
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
