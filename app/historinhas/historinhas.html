@@ -30,7 +30,8 @@
 
     body {
       font-family: 'Galdeano';
-      background-color: white;
+      /* background-color: white; */
+      background-color: #45614f;
       color: var(--text);
       line-height: 1.6;
     }
@@ -42,7 +43,9 @@
 
     /* ====== Layout ====== */
     .container {
-      max-width:var(--container);margin-inline:auto;padding:24px
+      max-width: var(--container);
+      margin-inline: auto;
+      padding: 24px
     }
 
     header {
@@ -50,25 +53,33 @@
       align-items: center;
       gap: 12px;
       padding: 12px 0;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #f69832;
       
       position: sticky;
       top: 0;
     }
     .btn-back {
-      border: 1px solid var(--border);
-      background: #fff;
+      border: 1px solid #f69832;
+      /* background: #fff; */
+      background-color: #93290c;
       border-radius: 999px;
       padding: .5rem .8rem;
       cursor: pointer;
     }
+
+    .btn-back a {
+      color: #f69832;
+    }
+
     .title {
       font-size: 1.5rem;
       font-weight: 700;
+      color: #f69832;
     }
 
     .intro {
-      color: var(--muted);
+      /* color: var(--muted); */
+      color: #f69832;
       margin: 16px 0
     }
 
@@ -149,13 +160,20 @@
    text-decoration: underline;
 }
 
-    footer{margin:24px 0;color:var(--muted);font-size:.9rem}
+
+
+    footer {
+      margin: 24px 0;
+      /* color: var(--muted); */
+      color: #f69832;
+      font-size: .9rem
+    }
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
   <header class="container" style="position:relative">
-    <button class="btn-back" type="button" onclick="history.back()" aria-label="Voltar">Voltar</button>
+    <button class="btn-back" type="button" onclick="history.back()" aria-label="Voltar"><a href="../index.html" style="text-decoration: none;">Voltar</a></button>
     <h1 class="title">Historinhas</h1>
   </header>
 
