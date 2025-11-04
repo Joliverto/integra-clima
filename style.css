@@ -558,7 +558,7 @@ nav.nav {
     text-decoration: none;
 }
 
-.produto span {
+.produto > a span {
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 2px 2px black;

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos Científicos - IntegraClima</title>
+    <style>
+        :root {
+            --primary-color: #006633;
+            --secondary-color: #009966;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --accent-color: #92290c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .articles-list {
+            list-style: none;
+        }
+
+        .article-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .article-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .article-item a {
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+        }
+
+        .article-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2em;
+        }
+
+        .article-link {
+            color: var(--accent-color);
+            font-size: 0.9em;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .article-count {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./midias/logo2.png" alt="Logo IntegraClima">
+            <h1>Artigos Científicos</h1>
+            <div class="article-count">2 Artigos publicados</div>
+        </header>
+
+        <ul class="articles-list">
+            <li class="article-item">
+                <a href="https://doi.org/10.3390/cli13100204" target="_blank">
+                    <h3>Os efeitos das mudanças climáticas na saúde: uma revisão sistemática sob a perspectiva de Saúde Única</h3>
+                    <span class="article-link">Acessar artigo →</span>
+                </a>
+            </li>
+            <li class="article-item">
+                <a href="https://doi.org/10.3389/fpubh.2025.1681810" target="_blank">
+                    <h3>A precisão e a consistência dos dados de saúde pública nos sistemas de informação brasileiros: identificação de lacunas e desafios a serem enfrentados em um município da região amazônica</h3>
+                    <span class="article-link">Acessar artigo →</span>
+                </a>
+            </li>
+        </ul>
+
+        <a href="index.html" class="back-button">Voltar à página inicial</a>
+    </div>
+
+    <script>
+        const articleCount = document.querySelectorAll('.article-item').length;
+        localStorage.setItem('articleCount', articleCount);
+    </script>
+</body>
+</html>

@@ -64,3 +64,28 @@ const showNextImage = () => {
 
 prevBtn.addEventListener("click", showPreviousImage)
 nextBtn.addEventListener("click", showNextImage)
+
+// Função para atualizar todos os contadores
+function updateCounters() {
+    // E-books
+    const ebookCounterElement = document.querySelector('.produto a[href="ebooks.html"] p span');
+    const ebookCount = localStorage.getItem('ebookCount') || 0;
+    if (ebookCounterElement) {
+        ebookCounterElement.innerHTML = `<span style="color: white;">${ebookCount}`;
+    }
+
+    // Artigos
+    const articleCounterElement = document.querySelector('.produto a[href="artigos.html"] p span');
+    const articleCount = localStorage.getItem('articleCount') || 0;
+    if (articleCounterElement) {
+        articleCounterElement.innerHTML = `<span style="color: white;">${articleCount}`;
+    }
+
+}
+
+// Executa quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', updateCounters);
+
+// Atualiza quando a página for recarregada
+window.addEventListener('storage', updateCounters);
+
