@@ -81,6 +81,13 @@ function updateCounters() {
         articleCounterElement.innerHTML = `<span style="color: white;">${articleCount}`;
     }
 
+    // Historinhas
+    const storiesCounterElement = document.querySelector('.produto a[href="historinhas.html"] p span');
+    const storiesCount = localStorage.getItem('storiesCount') || 0;
+    if (storiesCounterElement) {
+        storiesCounterElement.innerHTML = `<span style="color: white;">${storiesCount}`;
+    }
+
 }
 
 // Executa quando o DOM estiver carregado
