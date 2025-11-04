@@ -65,34 +65,69 @@ const showNextImage = () => {
 prevBtn.addEventListener("click", showPreviousImage)
 nextBtn.addEventListener("click", showNextImage)
 
+// Função para contar itens iniciais
+function countInitialItems() {
+    // Faz uma requisição para cada página HTML
+    fetch('historinhas.html')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const storiesCount = doc.querySelectorAll('.card').length;
+            localStorage.setItem('storiesCount', storiesCount);
+        });
+
+    fetch('ebooks.html')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const ebookCount = doc.querySelectorAll('.ebook-item').length;
+            localStorage.setItem('ebookCount', ebookCount);
+        });
+
+    fetch('artigos.html')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const articleCount = doc.querySelectorAll('.article-item').length;
+            localStorage.setItem('articleCount', articleCount);
+        })
+        .finally(() => {
+            updateCounters(); // Atualiza os contadores após todas as contagens
+        });
+}
+
 // Função para atualizar todos os contadores
 function updateCounters() {
     // E-books
-    const ebookCounterElement = document.querySelector('.produto a[href="ebooks.html"] p span');
+    const ebookCounterElement = document.querySelector('.produto a[href="ebooks.html"] p');
     const ebookCount = localStorage.getItem('ebookCount') || 0;
     if (ebookCounterElement) {
-        ebookCounterElement.innerHTML = `<span style="color: white;">${ebookCount}`;
+        ebookCounterElement.innerHTML = `<span style="color: white;">${ebookCount}</span> E-book${ebookCount === '1' ? '' : 's'}`;
     }
 
     // Artigos
-    const articleCounterElement = document.querySelector('.produto a[href="artigos.html"] p span');
+    const articleCounterElement = document.querySelector('.produto a[href="artigos.html"] p');
     const articleCount = localStorage.getItem('articleCount') || 0;
     if (articleCounterElement) {
-        articleCounterElement.innerHTML = `<span style="color: white;">${articleCount}`;
+        articleCounterElement.innerHTML = `<span style="color: white;">${articleCount}</span> Artigo${articleCount === '1' ? '' : 's'} Científico${articleCount === '1' ? '' : 's'}`;
     }
 
     // Historinhas
-    const storiesCounterElement = document.querySelector('.produto a[href="historinhas.html"] p span');
+    const storiesCounterElement = document.querySelector('.produto a[href="historinhas.html"] p');
     const storiesCount = localStorage.getItem('storiesCount') || 0;
     if (storiesCounterElement) {
-        storiesCounterElement.innerHTML = `<span style="color: white;">${storiesCount}`;
+        storiesCounterElement.innerHTML = `<span style="color: white;">${storiesCount}</span> Historinha${storiesCount === '1' ? '' : 's'}`;
     }
-
 }
 
-// Executa quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', updateCounters);
+// Executa a contagem inicial quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', () => {
+    countInitialItems();
+});
 
-// Atualiza quando a página for recarregada
+// Atualiza quando a página for recarregada ou houver mudanças no localStorage
 window.addEventListener('storage', updateCounters);
 
