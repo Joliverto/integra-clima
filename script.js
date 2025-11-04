@@ -29,27 +29,22 @@ const nextBtn = document.querySelector(".next")
 
 let currentImageIndex
 
+// Adicione estas variáveis no início da seção da galeria
+let startX = 0;
+let endX = 0;
+
+// Atualiza a função openModal
 const openModal = (index) => {
-    modal.style.display = "block"
-    modalImg.src = itemsGaleria[index].querySelector("img").src
-    currentImageIndex = index
+    modal.style.display = "block";
+    modalImg.src = itemsGaleria[index].querySelector("img").src;
+    currentImageIndex = index;
+    document.body.style.overflow = 'hidden'; // Impede rolagem do body
 }
 
-itemsGaleria.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        openModal(index)
-    })
-});
-
+// Atualiza a função closeModal
 const closeModal = () => {
-    modal.style.display = "none"
-}
-closeBtn.onclick = closeModal
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        closeModal()
-    }
+    modal.style.display = "none";
+    document.body.style.overflow = ''; // Restaura rolagem do body
 }
 
 const showPreviousImage = () => {
@@ -62,8 +57,78 @@ const showNextImage = () => {
     modalImg.src = itemsGaleria[currentImageIndex].querySelector("img").src
 }
 
-prevBtn.addEventListener("click", showPreviousImage)
-nextBtn.addEventListener("click", showNextImage)
+itemsGaleria.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        openModal(index)
+    })
+});
+
+// Adicione os eventos de touch para mobile
+modal.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+modal.addEventListener('touchmove', (e) => {
+    if (!startX) return;
+    
+    e.preventDefault(); // Previne rolagem da página
+    endX = e.touches[0].clientX;
+});
+
+modal.addEventListener('touchend', () => {
+    if (!startX || !endX) return;
+    
+    const diffX = startX - endX;
+    const threshold = 50; // Mínimo de pixels para considerar como swipe
+    
+    if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+            // Swipe para esquerda
+            showNextImage();
+        } else {
+            // Swipe para direita
+            showPreviousImage();
+        }
+    }
+    
+    startX = 0;
+    endX = 0;
+});
+
+// Adicione evento de teclado para desktop
+document.addEventListener('keydown', (e) => {
+    if (modal.style.display === "block") {
+        if (e.key === "ArrowLeft") {
+            showPreviousImage();
+        } else if (e.key === "ArrowRight") {
+            showNextImage();
+        } else if (e.key === "Escape") {
+            closeModal();
+        }
+    }
+});
+
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Impede propagação do clique
+    closeModal();
+});
+
+prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Impede propagação do clique
+    showPreviousImage();
+});
+
+nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Impede propagação do clique
+    showNextImage();
+});
+
+// Atualiza o evento de clique fora do modal
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
 
 // Função para contar itens iniciais
 function countInitialItems() {

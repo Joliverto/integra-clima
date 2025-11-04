@@ -226,6 +226,7 @@ nav.nav {
     transform: scale(1.1);
 }
 
+/* Atualize as regras do modal */
 .modal {
     display: none;
     position: fixed;
@@ -233,9 +234,8 @@ nav.nav {
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1001; /* Aumenta o z-index para ficar acima do menu */
     background-color: rgba(0,0,0,0.9);
-
     align-items: center;
     align-content: center;
 }
@@ -248,7 +248,7 @@ nav.nav {
 }
 
 .close {
-    position: absolute;
+    position: fixed; /* Muda para fixed para garantir posicionamento */
     top: 15px;
     right: 35px;
     color: #f1f1f1;
@@ -256,6 +256,7 @@ nav.nav {
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
+    z-index: 1002; /* Garante que fique acima do modal */
 }
 
 .close:hover,
