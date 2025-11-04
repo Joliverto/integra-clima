@@ -15,7 +15,7 @@ body {
 
 main > section {
     background-image: url("../midias/background.png");
-    background-attachment: fixed;
+    background-attachment: cover;
 }
 
 main > section > h1 {
