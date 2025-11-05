@@ -199,19 +199,19 @@ nav.nav {
 
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1400px;
+    grid-template-columns: repeat(3, 1fr); /* Sempre começa com 3 colunas */
+    gap: 8px;
+    max-width: 1200px;
     margin: 0 auto;
-
-    justify-items: center;
+    padding: 0 8px;
 }
 
 .item-galeria {
     overflow: hidden;
     cursor: pointer;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    aspect-ratio: 4/3;
 }
 
 .item-galeria img {
@@ -219,11 +219,47 @@ nav.nav {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3 ease;
+    transition: transform 0.3s ease;
 }
 
 .item-galeria:hover img {
     transform: scale(1.1);
+}
+
+/* Modal ajustado para melhor visualização */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px; /* Limita o tamanho máximo */
+    height: auto;
+    max-height: 90vh; /* Evita que a imagem fique maior que a tela */
+    object-fit: contain;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas no tablet */
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .item-galeria {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+}
+
+@media (min-width: 1024px) {
+    .galeria {
+        grid-template-columns: repeat(5, 1fr); /* 5 colunas no desktop */
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .sec-galeria {
+        padding: 40px;
+    }
 }
 
 /* Atualize as regras do modal */
