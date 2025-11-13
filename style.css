@@ -96,6 +96,21 @@ nav.nav {
     color: #f69832;
 }
 
+#close-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1003;
+    cursor: pointer;
+    font-size: 40px;
+    color: #f69832;
+}
+
+.nav.active #close-menu {
+    display: block;
+}
+
 .nav.active .nav-list {
         clip-path: circle(1500px at 90% -20%);
         pointer-events: all;

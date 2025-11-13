@@ -1,5 +1,6 @@
 // Menu Hamburguer
 const hamburguer = document.querySelector('#burguer');
+const closeMenu = document.querySelector('#close-menu');
 const nav = document.querySelector(".nav");
 const menuLinks = document.querySelectorAll('.menu-link')
 const body = document.body
@@ -7,6 +8,12 @@ const body = document.body
 hamburguer.addEventListener("click", () => {
     nav.classList.toggle("active")
     body.classList.toggle("no-rolagem")
+});
+
+// Fecha o menu ao clicar no botão de fechar
+closeMenu.addEventListener("click", () => {
+    nav.classList.remove("active")
+    body.classList.remove("no-rolagem")
 });
 
 menuLinks.forEach(link => {
