@@ -116,6 +116,11 @@ nav.nav {
         pointer-events: all;
     }
 
+/* Item de menu visível apenas no mobile/tablet */
+.mobile-only {
+    display: list-item;
+}
+
 /* Página inicial */
 
 .inicial {
@@ -981,6 +986,11 @@ nav.nav {
         cursor: pointer;
         font-size: 40px;
         color: #f69832;
+    }
+
+    /* Esconde o item Início no menu desktop */
+    .mobile-only {
+        display: none;
     }
 
     /* Página Principal */
