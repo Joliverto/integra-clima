@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos Didáticos - IntegraClima</title>
+    <link rel="icon" href="./favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Galdeano&display=swap');
+        
+        :root {
+            --primary-color: #006633;
+            --secondary-color: #45614f;
+            --accent-color: #f69832;
+            --dark-accent: #92290c;
+            --background-color: #45614f;
+            --text-color: #fff;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Galdeano', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        header img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1 i {
+            font-size: 1em;
+        }
+
+        .subtitle {
+            color: var(--text-color);
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+        }
+
+        .games-count {
+            background-color: var(--dark-accent);
+            color: var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            font-size: 1.1em;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .game-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #f0f0f0 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(246, 152, 50, 0.4);
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--dark-accent));
+        }
+
+        .game-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 120px;
+        }
+
+        .game-icon i {
+            font-size: 3.5em;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .game-body {
+            padding: 1.5rem;
+        }
+
+        .game-title {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-link {
+            display: block;
+            text-align: center;
+            background-color: var(--dark-accent);
+            color: var(--accent-color);
+            padding: 0.8rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .game-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-accent);
+            transform: scale(1.05);
+        }
+
+        .game-link i {
+            margin-left: 8px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--dark-accent);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-accent);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        /* Ícones específicos para cada jogo */
+        .icon-puzzle { color: #ff6b6b !important; }
+        .icon-memory { color: #4ecdc4 !important; }
+        .icon-strategy { color: #95e1d3 !important; }
+        .icon-tangram { color: #ffd93d !important; }
+        .icon-domino { color: #6bcf7f !important; }
+        .icon-detective { color: #a29bfe !important; }
+        .icon-fight { color: #fd79a8 !important; }
+        .icon-combat { color: #fdcb6e !important; }
+        .icon-discover { color: #74b9ff !important; }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .game-title {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .games-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Voltar à página inicial
+        </a>
+
+        <header>
+            <img src="./midias/logo1.png" alt="Logo IntegraClima">
+            <h1>
+                <i class="fas fa-gamepad"></i>
+                Jogos Didáticos Cocriados
+            </h1>
+            <p class="subtitle">Aprenda brincando sobre doenças e prevenção!</p>
+            <div class="games-count">9 Jogos disponíveis</div>
+        </header>
+
+        <p class="intro">
+            Clique em um jogo para acessar e começar a jogar. Todos os jogos são educativos e ensinam sobre prevenção de doenças de forma lúdica e divertida!
+        </p>
+
+        <div class="games-grid">
+            <!-- Jogo 1 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-th icon-puzzle"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Quadrado Mágico da Leishmaniose</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132436" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 2 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-clone icon-memory"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Jogo da Memória da Esquistossomose</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132438" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 3 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-chess-board icon-strategy"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Tapatan do Lyssavirus</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132441" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 4 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-shapes icon-tangram"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Tangram da Dengue</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132443" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 5 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-grip-horizontal icon-domino"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Dominó da Doença de Chagas</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132444" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 6 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-search icon-discover"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Descubra e Previna-se Contra a Cólera</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132428" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 7 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-user-secret icon-detective"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Detetives da Saúde – Caça a Febre Maculosa</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132429" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 8 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-fist-raised icon-fight"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Luta Contra a Hantavirose</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132470" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Jogo 9 -->
+            <div class="game-card">
+                <div class="game-icon">
+                    <i class="fas fa-shield-virus icon-combat"></i>
+                </div>
+                <div class="game-body">
+                    <h3 class="game-title">Toxocombate – Elimine a Toxoplasmose</h3>
+                    <a href="http://educapes.capes.gov.br/handle/capes/1132493" target="_blank" class="game-link">
+                        Jogar Agora
+                        <i class="fas fa-play-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button" style="margin-top: 2rem;">
+            <i class="fas fa-arrow-left"></i>
+            Voltar à página inicial
+        </a>
+    </div>
+
+    <script>
+        // Conta o número de jogos na lista
+        const gamesCount = document.querySelectorAll('.game-card').length;
+        
+        // Envia a contagem para a página principal através do localStorage
+        localStorage.setItem('gamesCount', gamesCount);
+        
+        // Atualiza o texto do contador no header
+        document.querySelector('.games-count').textContent = 
+            `${gamesCount} ${gamesCount === 1 ? 'Jogo disponível' : 'Jogos disponíveis'}`;
+    </script>
+</body>
+</html>

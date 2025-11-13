@@ -165,6 +165,15 @@ function countInitialItems() {
             const doc = parser.parseFromString(html, 'text/html');
             const articleCount = doc.querySelectorAll('.article-item').length;
             localStorage.setItem('articleCount', articleCount);
+        });
+
+    fetch('jogos.html')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const gamesCount = doc.querySelectorAll('.game-card').length;
+            localStorage.setItem('gamesCount', gamesCount);
         })
         .finally(() => {
             updateCounters(); // Atualiza os contadores após todas as contagens
@@ -192,6 +201,13 @@ function updateCounters() {
     const storiesCount = localStorage.getItem('storiesCount') || 0;
     if (storiesCounterElement) {
         storiesCounterElement.innerHTML = `<span style="color: white;">${storiesCount}</span> Historinha${storiesCount === '1' ? '' : 's'}`;
+    }
+
+    // Jogos
+    const gamesCounterElement = document.querySelector('.produto a[href="jogos.html"] p');
+    const gamesCount = localStorage.getItem('gamesCount') || 0;
+    if (gamesCounterElement) {
+        gamesCounterElement.innerHTML = `<span style="color: white;">${gamesCount}</span> Jogo${gamesCount === '1' ? '' : 's'} Didático${gamesCount === '1' ? '' : 's'} Cocriado${gamesCount === '1' ? '' : 's'}`;
     }
 }
 
